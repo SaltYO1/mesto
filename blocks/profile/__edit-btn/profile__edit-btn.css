@@ -2,9 +2,10 @@
   width: 18px;
   height: 18px;
   background-image: url(../../../images/info-edit.svg);
+  background-size: 7.5px;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: transparent;
   box-sizing: border-box;
   border: 1px solid #FFF;
   transition: opacity .3s ease;
@@ -17,6 +18,7 @@
 
 @media (min-width: 960px) {
   .profile__edit-btn {
+    background-size: 10px;
     width: 24px;
     height: 24px;
   }

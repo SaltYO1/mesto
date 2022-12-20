@@ -20,12 +20,12 @@
         <div class="profile__info-edit">
           <div class="profile__top-row">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-btn" type="button"></button>
+            <button class="profile__edit-btn" type="button" aria-label="Редактировать профиль"></button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__add-btn" type="button"></button>
+      <button class="profile__add-btn" type="button" aria-label="Добавить фотографию"></button>
     </section>
 
     <!-- elements -->
@@ -34,7 +34,7 @@
         <img src="./images/kirill-pershin-1088404-unsplash__1.jpg" alt="Старое сооружение на фоне зеленых гор" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
 
@@ -42,7 +42,7 @@
         <img src="./images/kirill-pershin-1404681-unsplash__2.jpg" alt="Далекая гора на закате" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
         <img src="./images/kirill-pershin-1556355-unsplash__3.jpg" alt="Заснеженная гора" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
         <img src="./images/kirill-pershin-1404681-unsplash__2.jpg" alt="Далекая гора на закате" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
 
@@ -66,7 +66,7 @@
         <img src="./images/kirill-pershin-1556355-unsplash__3.jpg" alt="Заснеженная гора" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
         <img src="./images/kirill-pershin-1088404-unsplash__1.jpg" alt="Старое сооружение на фоне зеленых гор" class="elements__image">
         <div class="elements__bottom">
           <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like-btn" type="button"></button>
+          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
         </div>
       </div>
     </section>
@@ -87,15 +87,15 @@
   <!-- popup -->
   <section class="popup">
     <div class="popup__container">
-      <button class="popup__close" type="button"></button>
+      <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input type="text" class="popup__input" id="nameInput" name="name" placeholder="Имя пользователя" required>
-        <input type="text" class="popup__input" id="jobInput" name="about me" placeholder="О себе" required>
+      <form class="popup__form" name="popupProfileForm">
+        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя пользователя" required>
+        <input type="text" class="popup__input popup__input_text_job" name="about me" placeholder="О себе" required>
         <button class="popup__submit-btn" type="submit">Сохранить</button>
       </form> 
     </div>
   </section>
-  <script src="./script.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

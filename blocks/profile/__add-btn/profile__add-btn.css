@@ -2,11 +2,13 @@
   width: 282px;
   height: 50px;
   background-image: url(../../../images/card__add.svg);
+  background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: transparent;
   box-sizing: border-box;
   border: 2px solid #FFFFFF;
+  border-radius: 2px;
   transition: opacity .3s ease;
   cursor: pointer;
 }
@@ -17,7 +19,7 @@
 
 @media (min-width: 960px) {
   .profile__add-btn {
+    background-size: 22px;
     width: 150px;
-    height: 50px;
   }
 }

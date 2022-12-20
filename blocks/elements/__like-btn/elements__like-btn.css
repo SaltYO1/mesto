@@ -4,7 +4,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: transparent;
   border: 0;
   padding: 0 0 0 22px;
   cursor: pointer;
@@ -12,7 +12,7 @@
 }
 
 .elements__like-btn:hover {
-  opacity: .6;
+  opacity: .5;
 }
 
 .elements__like-btn:active {
