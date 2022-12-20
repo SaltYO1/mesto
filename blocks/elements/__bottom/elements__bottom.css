@@ -1,0 +1,9 @@
+.elements__bottom {
+  min-width: 240px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 25px 21px 31px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}

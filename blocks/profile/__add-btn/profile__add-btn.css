@@ -1,0 +1,23 @@
+.profile__add-btn {
+  width: 282px;
+  height: 50px;
+  background-image: url(../../../images/card__add.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  box-sizing: border-box;
+  border: 2px solid #FFFFFF;
+  transition: opacity .3s ease;
+  cursor: pointer;
+}
+
+.profile__add-btn:hover {
+  opacity: .6;
+}
+
+@media (min-width: 960px) {
+  .profile__add-btn {
+    width: 150px;
+    height: 50px;
+  }
+}

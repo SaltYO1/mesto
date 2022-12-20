@@ -1,0 +1,6 @@
+.elements__card {
+  color: black;
+  min-width: 282px;
+  display: flex;
+  flex-direction: column;
+}

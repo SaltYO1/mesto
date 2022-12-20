@@ -1,0 +1,6 @@
+.profile__top-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 auto;
+}
