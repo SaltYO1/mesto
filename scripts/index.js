@@ -1,5 +1,5 @@
 let background = document.querySelector('.popup'); //фон попапа
-let formElement = document.querySelector('.popup__container'); //окно формы
+let formElement = document.querySelector('.popup__form'); //форма
 
 let nameInput = document.querySelector('.popup__input_text_name'); // поле ввода имени
 let jobInput = document.querySelector('.popup__input_text_job'); // поле ввода "О себе"
