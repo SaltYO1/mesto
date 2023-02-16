@@ -30,62 +30,26 @@
 
     <!-- elements -->
     <section class="elements">
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1088404-unsplash__1.jpg" alt="Старое сооружение на фоне зеленых гор" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
+      <template class="card-template">
+        <div class="elements__card">
+          <img src="#" alt="#" class="elements__image">
+          <button class="elements__trash" type="button" aria-label="Удалить карточку"></button>
+          <div class="elements__bottom">
+            <h2 class="elements__title"></h2>
+            <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
+          </div>
         </div>
-      </div>
-
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1404681-unsplash__2.jpg" alt="Далекая гора на закате" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
-        </div>
-      </div>
-
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1556355-unsplash__3.jpg" alt="Заснеженная гора" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
-        </div>
-      </div>
-
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1404681-unsplash__2.jpg" alt="Далекая гора на закате" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
-        </div>
-      </div>
-
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1556355-unsplash__3.jpg" alt="Заснеженная гора" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
-        </div>
-      </div>
-
-      <div class="elements__card">
-        <img src="./images/kirill-pershin-1088404-unsplash__1.jpg" alt="Старое сооружение на фоне зеленых гор" class="elements__image">
-        <div class="elements__bottom">
-          <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like-btn" type="button" aria-label="Поставить лайк"></button>
-        </div>
-      </div>
+      </template>
     </section>
+
   </main>
   <!-- footer -->
   <footer class="footer">
     <p class="footer__copyright" lang="en">&copy; 2022 Mesto Russia</p> 
   </footer>
 
-  <!-- popup -->
-  <section class="popup">
+  <!-- edit popup -->
+  <section class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -96,6 +60,29 @@
       </form> 
     </div>
   </section>
+
+  <!-- addcard popup -->
+  <section class="popup popup_type_add-card">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form" name="popupCardForm">
+        <input type="text" class="popup__input popup__input_card_name" name="name" placeholder="Название" required>
+        <input type="text" class="popup__input popup__input_card_link" name="picture link" placeholder="Ссылка на картинку" required>
+        <button class="popup__submit-btn" type="submit">Создать</button>
+      </form> 
+    </div>
+  </section>
+
+  <!-- openImg popup -->
+  <section class="popup popup_type_openImg">
+    <div class="popup__container-img">
+      <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
+      <img src="./images/photo-1559426756-14c161f0dae8 1.jpg" alt="#" class="popup__image">
+      <h2 class="popup__img-title">#</h2>
+    </div>
+  </section>
+
   <script src="./scripts/index.js"></script>
 </body>
 </html>

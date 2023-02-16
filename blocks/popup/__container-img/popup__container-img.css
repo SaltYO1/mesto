@@ -1,6 +1,4 @@
-.elements__card {
-  color: black;
-  min-width: 282px;
+.popup__container-img {
   display: flex;
   flex-direction: column;
   position: relative;

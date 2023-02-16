@@ -1,16 +1,19 @@
-.elements__like-btn {
+.elements__trash {
   height: 19px;
-  background-image: url(../../../images/like.svg);
+  width: 18px;
+  background-image: url(../../../images/Trash.svg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   border: 0;
-  padding: 0 0 0 22px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
   transition: opacity .3s ease;
 }
 
-.elements__like-btn:hover {
-  opacity: .5;
+.elements__trash:hover {
+  opacity: .6;
 }
