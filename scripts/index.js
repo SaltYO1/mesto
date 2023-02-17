@@ -33,10 +33,6 @@ function close(popup) {
   popup.classList.remove('popup_opened');
 }
 
-// выводим значения профиля в строки ввода формы
-nameInput.value = profileName.textContent;
-jobInput.value = profileSubtitle.textContent;
-
 // сохранение сабмита
 function handleFormSubmit(evt) {
   evt.preventDefault();
@@ -49,7 +45,13 @@ function handleFormSubmit(evt) {
 }
 
 // активация кнопок
-editPopupOpen.addEventListener('click', () => open(editPopupBackground));
+editPopupOpen.addEventListener('click', () => {
+  open(editPopupBackground)
+  // выводим значения профиля в строки ввода формы
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileSubtitle.textContent;
+});
+
 editFormElement.addEventListener('submit', handleFormSubmit);
 editPopupClose.addEventListener('click', () => close(editPopupBackground));
 
@@ -110,6 +112,7 @@ function handleCardsSubmit(evt) {
   cardsList.prepend(card);
 
   close(addCardPopupBackground);
+  evt.target.reset();
 }
 
 // создание карточек
@@ -119,6 +122,7 @@ function createCard (item) {
   cardTtl.textContent = item.name;
   const cardImg = card.querySelector('.elements__image');
   cardImg.src = item.link;
+  cardImg.alt = item.name;
 
   const likeBtn = card.querySelector('.elements__like-btn'); // кнопка лайка
   // поставить/убрать лайк
@@ -134,6 +138,7 @@ function createCard (item) {
     open(imagePopupBackground);
     imagePopupTitle.textContent = cardTtl.textContent;
     imagePopupImg.src = cardImg.src;
+    imagePopupImg.alt = cardTtl.textContent;
   });
 
   return card;
