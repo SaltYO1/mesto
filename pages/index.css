@@ -36,12 +36,16 @@
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__submit-btn/popup__submit-btn.css);
+@import url(../blocks/popup/__submit-btn/_inactive/popup__submit-btn_inactive.css);
 @import url(../blocks/popup/__input/_text/popup__input_text_name.css);
 @import url(../blocks/popup/__input/_text/popup__input_text_job.css);
 @import url(../blocks/popup/_type/popup_type_add-card.css);
 @import url(../blocks/popup/_type/popup_type_edit.css);
 @import url(../blocks/popup/__input/_card/popup__input_card_link.css);
 @import url(../blocks/popup/__input/_card/popup__input_card_name.css);
+@import url(../blocks/popup/__input/_type/popup__input_type_error.css);
+@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__input-error/_active/popup__input-error_active.css);
 @import url(../blocks/card-template/card-template.css);
 @import url(../blocks/elements/__like-btn/_active/elements__like-btn_active.css);
 @import url(../blocks/elements/__trash/elements__trash.css);

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
+  <script src="./scripts/validate.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
 </head>
 <body class="page">
   <!-- header -->
@@ -53,11 +55,13 @@
     <div class="popup__container">
       <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="popupProfileForm">
-        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя пользователя" required>
-        <input type="text" class="popup__input popup__input_text_job" name="about me" placeholder="О себе" required>
+      <form class="popup__form" name="popupProfileForm" novalidate>
+        <input class="popup__input popup__input_text_name" type="text" id="name-input" name="name" placeholder="Имя пользователя" minlength="2" maxlength="40" required>
+        <span class="popup__input-error" id="name-input-error"></span>
+        <input class="popup__input popup__input_text_job" type="text" id="job-input" name="aboutMme" placeholder="О себе" minlength="2" maxlength="200" required>
+        <span class="popup__input-error" id="job-input-error"></span>
         <button class="popup__submit-btn" type="submit">Сохранить</button>
-      </form> 
+      </form>
     </div>
   </section>
 
@@ -66,9 +70,11 @@
     <div class="popup__container">
       <button class="popup__close" type="button" aria-label="Закрыть окно"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="popupCardForm">
-        <input type="text" class="popup__input popup__input_card_name" name="name" placeholder="Название" required>
-        <input type="text" class="popup__input popup__input_card_link" name="picture link" placeholder="Ссылка на картинку" required>
+      <form class="popup__form" name="popupCardForm" novalidate>
+        <input class="popup__input popup__input_card_name" type="text" id="card-name-input" name="name" placeholder="Название" minlength="2" maxlength="30" required>
+        <span class="popup__input-error" id="card-name-input-error"></span>
+        <input class="popup__input popup__input_card_link" type="url" id="card-link-input" name="pictureLink" placeholder="Ссылка на картинку" required>
+        <span class="popup__input-error" id="card-link-input-error"></span>
         <button class="popup__submit-btn" type="submit">Создать</button>
       </form> 
     </div>
@@ -82,7 +88,5 @@
       <h2 class="popup__img-title">#</h2>
     </div>
   </section>
-
-  <script src="./scripts/index.js"></script>
 </body>
 </html>
