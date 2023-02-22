@@ -1,89 +1,3 @@
-const popupContainer = document.querySelector('.popup');
-const editPopupOpen = document.querySelector('.profile__edit-btn'); // кнопка редактирования профиля
-const editPopupBackground = document.querySelector('.popup_type_edit'); //фон попапа 
-const editFormElement = editPopupBackground.querySelector('.popup__form'); //форма
-const nameInput = document.querySelector('.popup__input_text_name'); // поле ввода имени
-const jobInput = document.querySelector('.popup__input_text_job'); // поле ввода "О себе"
-
-const profileName = document.querySelector('.profile__name'); // имя в профиле
-const profileSubtitle = document.querySelector('.profile__subtitle'); // описание профиля
-
-const addCardPopupOpen = document.querySelector('.profile__add-btn'); // кнопка добавления новой карточки
-const addCardPopupBackground = document.querySelector('.popup_type_add-card'); //фон попапа добавления карточек
-const cardFormElement = addCardPopupBackground.querySelector('.popup__form'); //форма добавления карточек
-
-const template = document.querySelector('.card-template').content.querySelector('.elements__card'); // шаблон карточки
-const cardsList = document.querySelector('.elements'); // список карточек
-const cardNameInput = document.querySelector('.popup__input_card_name'); // поле ввода названия картинки
-const cardLinkInput = document.querySelector('.popup__input_card_link'); // поле ввода ссылки на картинку
-const imagePopupBackground = document.querySelector('.popup_type_openImg'); // фон попапа с открытием картинки
-const imagePopupTitle = imagePopupBackground.querySelector('.popup__img-title'); // текст под картинкой
-const imagePopupImg = imagePopupBackground.querySelector('.popup__image'); // открытая картинка
-const closeButtons = document.querySelectorAll('.popup__close'); //кнопки закрытия попапа
-
-//функция закрытия попапа на escape
-function closePopupEsc (evt) {
-  if (evt.key === 'Escape') {
-    const popupOpened = document.querySelector('.popup_opened');
-    close(popupOpened);
-  }
-}
-
-//открытие попапа
-function open(popup) {
-  // добавляем класс к фону попапа
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupEsc);
-  clickOverlay(popup);
-}
-
-//универсальная функция закрытия попапа кликом на крестик
-closeButtons.forEach((button) => {
-  // находим 1 раз ближайший к крестику попап 
-  const popup = button.closest('.popup');
-  // устанавливаем обработчик закрытия на крестик
-  button.addEventListener('click', () => close(popup));
-});
-
-// закрытие попапа
-function close(popup) {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closePopupEsc);
-}
-
-// сохранение сабмита
-function handleFormSubmit(evt) {
-  evt.preventDefault();
-
-  // получаем значения value и передаем в профиль
-  profileName.textContent = nameInput.value;
-  profileSubtitle.textContent = jobInput.value;
-
-  close(editPopupBackground);
-}
-
-// активация кнопок
-editPopupOpen.addEventListener('click', () => {
-  open(editPopupBackground)
-  // выводим значения профиля в строки ввода формы
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileSubtitle.textContent;
-});
-
-editFormElement.addEventListener('submit', handleFormSubmit);
-addCardPopupOpen.addEventListener('click', () => open(addCardPopupBackground));
-cardFormElement.addEventListener('submit', handleCardsSubmit);
-
-//функция закрытия попапа кликом на оверлей
-function clickOverlay (popup) {
-  popup.addEventListener('mousedown', function(evt) {
-    if (evt.target === popup) {
-      close(popup)
-    }
-  });
-};
-
-
 // массив карточек
 const initialCards = [
   {
@@ -112,6 +26,95 @@ const initialCards = [
   }
 ];
 
+const popupProfileOpenButton = document.querySelector('.profile__edit-btn'); // кнопка редактирования профиля 
+const popupProfileBackground = document.querySelector('.popup_type_edit'); //фон попапа
+const popupFormElement = popupProfileBackground.querySelector('.popup__form'); //форма
+const nameInput = document.querySelector('.popup__input_text_name'); // поле ввода имени
+const jobInput = document.querySelector('.popup__input_text_job'); // поле ввода "О себе"
+
+const profileName = document.querySelector('.profile__name'); // имя в профиле
+const profileSubtitle = document.querySelector('.profile__subtitle'); // описание профиля
+
+const popupCardOpenBotton = document.querySelector('.profile__add-btn'); // кнопка добавления новой карточки
+const popupCardBackground = document.querySelector('.popup_type_add-card'); //фон попапа добавления карточек
+const cardFormElement = popupCardBackground.querySelector('.popup__form'); //форма добавления карточек
+const popupCardSave = popupCardBackground.querySelector('.popup__submit-btn'); // кнопка сохранения в попапе с добавлением карточек
+
+const template = document.querySelector('.card-template').content.querySelector('.elements__card'); // шаблон карточки
+const cardsList = document.querySelector('.elements'); // список карточек
+const cardNameInput = document.querySelector('.popup__input_card_name'); // поле ввода названия картинки
+const cardLinkInput = document.querySelector('.popup__input_card_link'); // поле ввода ссылки на картинку
+const imagePopupBackground = document.querySelector('.popup_type_openImg'); // фон попапа с открытием картинки
+const imagePopupTitle = imagePopupBackground.querySelector('.popup__img-title'); // текст под картинкой
+const imagePopupImg = imagePopupBackground.querySelector('.popup__image'); // открытая картинка
+const popupCloseButtons = document.querySelectorAll('.popup__close'); //кнопки закрытия попапа
+
+//функция закрытия попапа на escape
+function closePopupEsc (evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  }
+}
+
+//открытие попапа
+function openPopup(popup) {
+  // добавляем класс к фону попапа
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
+}
+
+clickOverlay(popupProfileBackground);
+clickOverlay(popupCardBackground);
+clickOverlay(imagePopupBackground);
+
+//универсальная функция закрытия попапа кликом на крестик
+popupCloseButtons.forEach((button) => {
+  // находим 1 раз ближайший к крестику попап 
+  const popup = button.closest('.popup');
+  // устанавливаем обработчик закрытия на крестик
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+// закрытие попапа
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
+}
+
+// сохранение сабмита
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+
+  // получаем значения value и передаем в профиль
+  profileName.textContent = nameInput.value;
+  profileSubtitle.textContent = jobInput.value;
+
+  closePopup(popupProfileBackground);
+}
+
+// активация кнопок
+popupProfileOpenButton.addEventListener('click', () => {
+  openPopup(popupProfileBackground)
+  // выводим значения профиля в строки ввода формы
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileSubtitle.textContent;
+});
+
+popupFormElement.addEventListener('submit', handleFormSubmit);
+popupCardOpenBotton.addEventListener('click', () => openPopup(popupCardBackground));
+cardFormElement.addEventListener('submit', handleCardsSubmit);
+
+//функция закрытия попапа кликом на оверлей
+function clickOverlay (popup) {
+  popup.addEventListener('mousedown', function(evt) {
+    if (evt.target === popup) {
+      closePopup(popup)
+    }
+  });
+};
+
+
 // загрузка массива карточек
 function loadCards(items) {
   const cards = items.map((item) => {
@@ -134,8 +137,10 @@ function handleCardsSubmit(evt) {
   const card = createCard({name: name, link: link});
   cardsList.prepend(card);
 
-  close(addCardPopupBackground);
+  closePopup(popupCardBackground);
   evt.target.reset();
+  popupCardSave.classList.add('popup__submit-btn_inactive');
+  popupCardSave.setAttribute('disabled', true);
 }
 
 // создание карточек
@@ -158,7 +163,7 @@ function createCard (item) {
 
   // открыть картинку на весь экран
   cardImg.addEventListener('click', (evt) => {
-    open(imagePopupBackground);
+    openPopup(imagePopupBackground);
     imagePopupTitle.textContent = cardTtl.textContent;
     imagePopupImg.src = cardImg.src;
     imagePopupImg.alt = cardTtl.textContent;
